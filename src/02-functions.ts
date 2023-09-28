@@ -62,9 +62,9 @@ function sortColleagues(
     return fullResult.slice(0,end)
   }
   // Test invocations
-  console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
-  console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
-  console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
+//  console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
+//  console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
+//  console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
   
 
   function findFriends(friends: Friend[], match:(friend: Friend)=> boolean): Friend[] {
@@ -80,3 +80,15 @@ function sortColleagues(
 
 //console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
 //console.log(findFriends(friends, (friend) => friend.age < 35));
+function addInterest(f: Friend, inter: string){
+    if(f.interests?.length==0){
+        f.interests.push(inter)
+        return f.interests
+    }
+    else{
+        f.interests?.push(inter)
+        return f.interests
+    }
+    
+}
+console.log(addInterest(friends[1], 'Politics'))
